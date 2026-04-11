@@ -1,6 +1,7 @@
 import random
 from datetime import datetime,timedelta
 
+
 def simular_ingresos(numeroIngresos):
   
   listaCategorias=["intereses", "comisiones", "ventas", "creditos", "comisiones"]
@@ -20,6 +21,21 @@ def simular_ingresos(numeroIngresos):
 
     }
 
+    ##inyectar errores controlados 
+    probabilidadError= random.random()
+
+    if probabilidadError <0.1:
+      ingreso["id"]=random.choice([None,-1,0])
+      ingreso["valor"]=None
+    elif probabilidadError <0.3:
+      ingreso["Descripcion"]=" " + ingreso["Descripcion"] + " "
+    elif probabilidadError <0.6:
+      ingreso["Categoria"]=ingreso["Categoria"].upper()
+    elif probabilidadError <0.9:
+      ingreso["fecha"]=None      
+      
+
     Ingresos.append(ingreso)
+    
   return Ingresos
-## ya, arreglate porfa  
+

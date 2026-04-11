@@ -1,0 +1,114 @@
+[
+    {
+        "id":null,
+        "fecha":"20-03-10",
+        "valor":null,
+        "Descripcion":"pago de nomina",
+        "Categoria":"creditos"
+    },
+    {
+        "id":2.0,
+        "fecha":"28-03-10",
+        "valor":13316564.0,
+        "Descripcion":" suscripcion spotify ",
+        "Categoria":"comisiones"
+    },
+    {
+        "id":13.0,
+        "fecha":"30-04-10",
+        "valor":24018637.0,
+        "Descripcion":"compra en macdonals",
+        "Categoria":"COMISIONES"
+    },
+    {
+        "id":16.0,
+        "fecha":"09-01-10",
+        "valor":43448195.0,
+        "Descripcion":" suscripcion spotify ",
+        "Categoria":"ventas"
+    },
+    {
+        "id":20.0,
+        "fecha":"11-04-10",
+        "valor":15476840.0,
+        "Descripcion":" compra de gasolina ",
+        "Categoria":"intereses"
+    },
+    {
+        "id":-1.0,
+        "fecha":"29-03-10",
+        "valor":null,
+        "Descripcion":"pago de nomina",
+        "Categoria":"comisiones"
+    },
+    {
+        "id":6.0,
+        "fecha":"24-01-10",
+        "valor":42220527.0,
+        "Descripcion":" compra en macdonals ",
+        "Categoria":"comisiones"
+    },
+    {
+        "id":16.0,
+        "fecha":"05-01-10",
+        "valor":31683132.0,
+        "Descripcion":"suscripcion spotify",
+        "Categoria":"CREDITOS"
+    },
+    {
+        "id":1.0,
+        "fecha":"03-02-10",
+        "valor":21955332.0,
+        "Descripcion":"suscripcion spotify",
+        "Categoria":"comisiones"
+    },
+    {
+        "id":13.0,
+        "fecha":null,
+        "valor":4581131.0,
+        "Descripcion":"compra en exito",
+        "Categoria":"ventas"
+    },
+    {
+        "id":1.0,
+        "fecha":"11-01-10",
+        "valor":45216573.0,
+        "Descripcion":"pago de nomina",
+        "Categoria":"INTERESES"
+    },
+    {
+        "id":9.0,
+        "fecha":"20-02-10",
+        "valor":19874337.0,
+        "Descripcion":" compra en exito ",
+        "Categoria":"comisiones"
+    },
+    {
+        "id":9.0,
+        "fecha":null,
+        "valor":26921634.0,
+        "Descripcion":"pago de nomina",
+        "Categoria":"creditos"
+    },
+    {
+        "id":12.0,
+        "fecha":null,
+        "valor":16277868.0,
+        "Descripcion":"pago de nomina",
+        "Categoria":"creditos"
+    },
+    {
+        "id":9.0,
+        "fecha":"09-01-10",
+        "valor":1867437.0,
+        "Descripcion":"compra en macdonals",
+        "Categoria":"INTERESES"
+    },
+    {
+        "id":0.0,
+        "fecha":"25-02-10",
+        "valor":null,
+        "Descripcion":"compra en exito",
+        "Categoria":"intereses"
+    }
+]

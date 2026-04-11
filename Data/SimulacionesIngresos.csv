@@ -1,0 +1,17 @@
+,id,fecha,valor,Descripcion,Categoria
+0,,20-03-10,,pago de nomina,creditos
+1,2.0,28-03-10,13316564.0, suscripcion spotify ,comisiones
+2,13.0,30-04-10,24018637.0,compra en macdonals,COMISIONES
+3,16.0,09-01-10,43448195.0, suscripcion spotify ,ventas
+4,20.0,11-04-10,15476840.0, compra de gasolina ,intereses
+5,-1.0,29-03-10,,pago de nomina,comisiones
+6,6.0,24-01-10,42220527.0, compra en macdonals ,comisiones
+7,16.0,05-01-10,31683132.0,suscripcion spotify,CREDITOS
+8,1.0,03-02-10,21955332.0,suscripcion spotify,comisiones
+9,13.0,,4581131.0,compra en exito,ventas
+10,1.0,11-01-10,45216573.0,pago de nomina,INTERESES
+11,9.0,20-02-10,19874337.0, compra en exito ,comisiones
+12,9.0,,26921634.0,pago de nomina,creditos
+13,12.0,,16277868.0,pago de nomina,creditos
+14,9.0,09-01-10,1867437.0,compra en macdonals,INTERESES
+15,0.0,25-02-10,,compra en exito,intereses

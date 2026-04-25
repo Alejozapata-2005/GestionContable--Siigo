@@ -15,5 +15,26 @@ simulaciones_limpias_usuarios = limpiar_datos(simulaciones_ordenadas)
 print(simulaciones_limpias_usuarios)
 
 from notebook.descripcion_usuario import describir_datos
+##Llamado a ingresos
+
+# Se cambian las importaciones para apuntar a los nuevos archivos de transacciones/registros
+
+import pandas as pd  # ¡Faltaba esta línea!
+
+from notebook.Limpieza_ingresos import limpiar_datos
+from utils.simulador_ingresos import simular_ingresos
+
+##Zona para importar descripciones 
+from notebook.Descripcion_ingresos import describir_datos
+
+simulaciones = simular_ingresos(1000)
+
+# llamando a panda para crear data frame de los datos de entrada
+simulaciones_ordenadas = pd.DataFrame(simulaciones)
+
+# llamando a la rutina de limpieza
+simulaciones_limpias_ingresos = limpiar_datos(simulaciones_ordenadas)
+
+describir_datos(simulaciones_limpias_ingresos)
 
 describir_datos(simulaciones_limpias_usuarios)

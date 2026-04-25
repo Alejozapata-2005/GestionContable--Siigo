@@ -10,12 +10,11 @@ simulaciones = simular_usuarioss(1000)
 simulaciones_ordenadas = pd.DataFrame(simulaciones)
 
 #llamando a la rutina de limpieza
-simulaciones_limpias = limpiar_datos(simulaciones_ordenadas)
+simulaciones_limpias_usuarios = limpiar_datos(simulaciones_ordenadas)
 
-print(simulaciones_limpias)
+print(simulaciones_limpias_usuarios)
 
-
-
+from notebook.descripcion_usuario import describir_datos
 ##Llamado a ingresos
 
 # Se cambian las importaciones para apuntar a los nuevos archivos de transacciones/registros
@@ -38,5 +37,4 @@ simulaciones_limpias_ingresos = limpiar_datos(simulaciones_ordenadas)
 
 describir_datos(simulaciones_limpias_ingresos)
 
-
-
+describir_datos(simulaciones_limpias_usuarios)

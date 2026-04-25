@@ -27,7 +27,7 @@ def simular_usuarioss(numerousuarioss):
             #usuario["nombre"]=None
 
         elif probabilidadError<0.3:
-            usuario["roles"]= " "+usuario["roles"]+ " "
+            usuario["rol"]= " "+usuario["rol"]+ " "
         elif probabilidadError<0.6:
             usuario["correo"]= usuario["correo"].upper()
       
@@ -35,4 +35,4 @@ def simular_usuarioss(numerousuarioss):
 
 
         usuarios.append(usuario)
-        return usuarios
+    return usuarios

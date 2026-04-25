@@ -1,22 +1,15 @@
 import pandas as pd
-from utils.simulador_usuarios import simular_usuarioss
-from utils.simulador_ingresos import simular_ingresos
 
-simulaciones = simular_usuarioss(10)
+from notebook.limpieza_usuarios import limpiar_datos
+from utils.simulador_usuarios import simular_usuarioss
+
+
+simulaciones = simular_usuarioss(1000)
+
+#llamando a panda para crear data frame de los datos de entrada
 simulaciones_ordenadas = pd.DataFrame(simulaciones)
 
-#convirtiendo  nuestra simulacion en dos formatos diferentes
-#JSON
-simulaciones_ordenadas.to_json("Data/SimulacionUsuarios.json", orient="records", indent=4)
-#CSV
-simulaciones_ordenadas.to_csv("Data/SimulacionUsuarios.csv")
+#llamando a la rutina de limpieza
+simulaciones_limpias = limpiar_datos(simulaciones_ordenadas)
 
-
-SimulacionCreacion = simular_ingresos(10)
-simulaciones_Ingresos = pd.DataFrame(SimulacionCreacion)
-
-#convirtiendo  nuestra simulacion en dos formatos diferentes
-#JSON
-simulaciones_Ingresos.to_json("Data/SimulacionIngresos.json", orient="records", indent=4)
-#CSV
-simulaciones_Ingresos.to_csv("Data/SimulacionIngresos.csv")
+print(simulaciones_limpias)

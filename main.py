@@ -3,6 +3,14 @@ import pandas as pd
 from notebook.limpieza_usuarios import limpiar_datos
 from utils.simulador_usuarios import simular_usuarioss
 
+#NUEVOusuario
+##zona para importar llamados al api (consumos)
+from notebook.consumo_usuario import consumir_api_tabla_usuarios
+
+#NUEVO
+#cargando los datos del api
+datos_API=consumir_api_tabla_usuarios()
+print(datos_API)
 
 simulaciones = simular_usuarioss(1000)
 
@@ -35,6 +43,6 @@ simulaciones_ordenadas = pd.DataFrame(simulaciones)
 # llamando a la rutina de limpieza
 simulaciones_limpias_ingresos = limpiar_datos(simulaciones_ordenadas)
 
-describir_datos(simulaciones_limpias_ingresos)
+#describir_datos(simulaciones_limpias_ingresos)
 
-describir_datos(simulaciones_limpias_usuarios)
+#describir_datos(simulaciones_limpias_usuarios)

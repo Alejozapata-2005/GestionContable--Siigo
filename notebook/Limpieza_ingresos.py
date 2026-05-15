@@ -14,7 +14,7 @@ def limpiar_datos(data_frame_sucio):
 
     # 2 limpiar las columnas numericas (y de fecha) del data frame
     data_frame_limpio["valor"] = pd.to_numeric(data_frame_limpio["valor"], errors="coerce")
-    data_frame_limpio["fecha"] = pd.to_datetime(data_frame_limpio["fecha"], errors="coerce")
+    data_frame_limpio["fecha"] = pd.to_datetime(data_frame_limpio["fecha"], format="%Y-%m-%d", errors="coerce")
 
     # 2.1 limpiando campos numericos que no tengan valores validos
     data_frame_limpio = data_frame_limpio[data_frame_limpio["valor"] > 0]

@@ -1,9 +1,14 @@
+import pandas as pd
+
 def transformar_datos(data_frame_limpio):
     df = data_frame_limpio.copy()
 
-    # Columna auxiliar para analizar el proveedor del correo.
-    df["dominio"] = df["correo"].str.split("@").str[-1]
-    df["tipo_correo"] = df["dominio"].eq("empresa.com").map(
+    # 1. Columna auxiliar para analizar el proveedor del correo.
+    # Convertimos a minúsculas para que el cruce sea 100% exacto
+    df["dominio"] = df["correo"].str.split("@").str[-1].str.lower().str.strip()
+    
+    # CORRECCIÓN CRÍTICA: Cambiamos 'empresa.com' por 'gestion.com' que es tu dominio real
+    df["tipo_correo"] = df["dominio"].eq("gestion.com").map(
         {True: "corporativo", False: "no_corporativo"}
     )
 
@@ -44,6 +49,7 @@ def transformar_datos(data_frame_limpio):
     )
 
     # transformacion 5 (usuarios corporativos por nombre)
+    # ¡Ahora sí se llenará porque ya existen usuarios con 'corporativo'!
     filtro5 = df[df["tipo_correo"] == "corporativo"]
     agrupacion5 = (
         filtro5.groupby("nombre")["id"]

@@ -1,13 +1,19 @@
 import pandas as pd
+from notebook.consumo_Ingresos import consumir_api_tabla_Ingresos
+from notebook.Limpieza_ingresos import limpiar_datos 
+from notebook.transformacion_ingresos import transformar_datos
 from notebook.consumo_usuario import consumir_api_tabla_usuarios
 from notebook.limpieza_usuarios import limpiar_datos
 from notebook.transformacion_usuario import transformar_datos
 
+datos_tabla_Ingresos = consumir_api_tabla_Ingresos()
+data_frame_ingresos = pd.DataFrame(datos_tabla_Ingresos)
+data_frame_limpio_ingresos = limpiar_datos(data_frame_ingresos)
+agrupaciones_ingresos = transformar_datos(data_frame_limpio_ingresos)
 datos_tabla_usuarios=consumir_api_tabla_usuarios()
-print(datos_tabla_usuarios)
-
 data_frame_usuarios= pd.DataFrame(datos_tabla_usuarios)
 data_frama_limpio_usuarios=limpiar_datos(data_frame_usuarios)
-
-agrupaciones=transformar_datos(data_frama_limpio_usuarios)
-print(agrupaciones)
+agrupaciones_usuarios=transformar_datos(data_frama_limpio_usuarios)
+print(agrupaciones_usuarios)
+print(agrupaciones_ingresos)
+##listo

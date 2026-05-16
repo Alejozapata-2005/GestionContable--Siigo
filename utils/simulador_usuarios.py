@@ -6,7 +6,7 @@ def simular_usuarioss(numerousuarioss):
 
     correos=["sahara@gmail.com","alejo@yahoo.com","samiris@outlook.com","carlos@empresa.com"]
 
-    roles=["admin","usuarios","gerente"," contador"]
+    roles=["admin","contador","gerente"," contador"]
 
     usuarios=[]
     for _ in range (numerousuarioss):

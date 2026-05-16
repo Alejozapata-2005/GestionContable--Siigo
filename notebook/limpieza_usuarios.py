@@ -5,10 +5,25 @@ def limpiar_datos(data_frame_sucio):
     data_frame_limpio = data_frame_sucio.copy()
 
     #1 limpiar las columnas string del data frame
-    valores_validos_rol = ["admin", "usuarios", "gerente", "contador"]
-    data_frame_limpio["nombre"] = data_frame_limpio["nombre"].astype(str).str.strip()
-    data_frame_limpio["rol"] = data_frame_limpio["rol"].astype(str).str.strip().str.lower()
-    data_frame_limpio["correo"] = data_frame_limpio["correo"].astype(str).str.strip().str.lower()
+    valores_validos_rol = ["contador"]
+    columnas_texto = ["nombre", "rol", "correo"]
+    for columna in columnas_texto:
+        data_frame_limpio[columna] = data_frame_limpio[columna].replace(
+            [None, "None", "nan", "NaN"], pd.NA
+        )
+
+    data_frame_limpio["nombre"] = (
+        data_frame_limpio["nombre"].astype("string").str.strip().str.title()
+    )
+    data_frame_limpio["rol"] = (
+        data_frame_limpio["rol"].astype("string").str.strip().str.lower()
+    )
+    data_frame_limpio["rol"] = data_frame_limpio["rol"].replace(
+        {"usuarios": "contador"}
+    )
+    data_frame_limpio["correo"] = (
+        data_frame_limpio["correo"].astype("string").str.strip().str.lower()
+    )
     data_frame_limpio["rol"] = data_frame_limpio["rol"].where(
         data_frame_limpio["rol"].isin(valores_validos_rol), pd.NA
     )

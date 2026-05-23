@@ -1,6 +1,6 @@
 import pandas as pd
 
-def transformar_datos(data_frame_limpio_ingresos):
+def transformar_datos_ingresos(data_frame_limpio_ingresos):
     # Hacemos una copia para no alterar el DataFrame original por fuera
     df = data_frame_limpio_ingresos.copy()
 
@@ -19,17 +19,24 @@ def transformar_datos(data_frame_limpio_ingresos):
         # Salvavidas en caso de que no existiera ninguna referencia
         df['cliente_id'] = df['id']
 
-    # --- NORMALIZACIÓN CRÍTICA ---
+ # --- NORMALIZACIÓN CRÍTICA ---
+    # Salvavidas en caso de que 'fecha' no venga textualmente así desde la API/limpieza
+    if 'fecha' not in df.columns:
+        if 'date' in df.columns:
+            df = df.rename(columns={'date': 'fecha'})
+        elif 'created_at' in df.columns:
+            df['fecha'] = df['created_at']
+        else:
+            # Crea la columna vacía si no existe ninguna referencia temporal para evitar que el script muera
+            df['fecha'] = pd.NaT
+
     # Convertimos las fechas de forma segura manejando errores
     df['fecha'] = pd.to_datetime(df['fecha'], errors='coerce').dt.date
-    df['created_at'] = pd.to_datetime(df['created_at'], errors='coerce').dt.date
     
-    # Pasamos a minúsculas las categorías para que los queries no fallen por culpa de "Ventas" vs "ventas"
-    if 'categoria' in df.columns:
-        df['categoria'] = df['categoria'].astype(str).str.lower().str.strip()
-
-    # Aseguramos que valor sea un número real
-    df['valor'] = pd.to_numeric(df['valor'], errors='coerce').fillna(0)
+    if 'created_at' in df.columns:
+        df['created_at'] = pd.to_datetime(df['created_at'], errors='coerce').dt.date
+    else:
+        df['created_at'] = df['fecha']
 
 
     # --- 5 TRANSFORMACIONES ACTUALIZADAS ---
